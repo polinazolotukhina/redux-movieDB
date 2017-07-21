@@ -12,7 +12,6 @@ export default class List extends Component {
               movieprops.data.results && movieprops.data.results.map((item ) =>
                 <div className=" col-md-4 sm-12" key={item.id}>
                   <div className="movie">
-                      <a href={"https://www.google.co.uk/search?q=" + item.title }>
                         {
                           item.backdrop_path ? (
                             <img className="moveImg"
@@ -22,13 +21,13 @@ export default class List extends Component {
                             <img className="moveImg" src="https://www.omao.noaa.gov/sites/all/themes/noaa_omao/images/video-placeholder-640.jpg" />
                           )
                         }
-                      </a>
                       <div className="info">
                           <a href={"https://www.google.co.uk/search?q=" + item.title }>
                               <h4 className="movieName">{item.title }</h4>
                           </a>
                           <p>Release date : {item.release_date}</p>
                           <p>👍🏻{item.vote_average}</p>
+                          <button className="pull-left">Save to Favourites </button>
                       </div>
                   </div>
                 </div>

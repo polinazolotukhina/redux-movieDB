@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import * as actions from '../actions/moviesActions';
+const FontAwesome = require('react-fontawesome');
 
 
 
@@ -31,20 +32,32 @@ class HomePage extends React.Component {
         return (
           <div className="row">
           <div className="col-md-offset-2 col-md-8">
-            <h1 className="text-center">Why not to watch '{arr.title}'?</h1>
 
+
+
+
+
+            <h1 className="text-center">Why not to watch '{arr.title}'?</h1>
             {
-              arr.backdrop_path ? (
-              <img src={"http://image.tmdb.org/t/p/w342" + arr.backdrop_path} />
-            ) : (
-              <img src={"https://www.omao.noaa.gov/sites/all/themes/noaa_omao/images/video-placeholder-640.jpg"} />
-            )
-          }
+              (movies.isLoading)?(
+                <div className ='load'>
+                      <FontAwesome name="spinner" size='4x'spin style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/>
+                 </div>
+              ):(
+
+                  (arr.backdrop_path) ? (
+                  <img src={"http://image.tmdb.org/t/p/w342" + arr.backdrop_path} />
+                ) : (
+                  <img src={"https://www.omao.noaa.gov/sites/all/themes/noaa_omao/images/video-placeholder-640.jpg"} />
+                )
+
+            )}
+
 
             <h4  className="movieName text-center">{arr.title}</h4>
             <p  className="movieName text-center">{arr.overview}</p>
             <div className="text-center">
-              <button className="btn btn-default"onClick={this.showNewMovie}>Suggest me something else</button>
+              <button className="btn btn-default" onClick={this.showNewMovie}>Suggest me something else</button>
             </div>
 
             </div>

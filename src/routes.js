@@ -7,9 +7,8 @@ import Popular from './containers/Popular/Popular';
 import Drama from './containers/Drama/Drama';
 import Kids from './containers/Kids/Kids';
 import Cinema from './containers/Cinema/Cinema';
-import Experiments from './containers/Experiments/Experiments';
 import Search from './containers/Search/Search';
-import AboutPage from './components/AboutPage';
+import Favourites from './containers/Favourites/Favourites';
 import NotFoundPage from './components/NotFoundPage';
 
 export default (
@@ -18,9 +17,9 @@ export default (
         <Route path="popular" component={Popular}/>
         <Route path="drama" component={Drama}/>
         <Route path="in_cinema_now" component={Cinema}/>
-        <Route path="experiments" component={Experiments}/>
         <Route path="kids" component={Kids}/>
         <Route path="search" component={Search}/>
+        <Route path="favourites" component={Favourites}/>
         <Route path="*" component={NotFoundPage}/>
     </Route>
 );
