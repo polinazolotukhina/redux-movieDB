@@ -42,6 +42,7 @@ class Kids extends React.Component {
 
     render() {
         const { movies } = this.props;
+        console.log( "LALALA", movies)
           const totalPages = movies.data.total_pages;
         return (
           <div>

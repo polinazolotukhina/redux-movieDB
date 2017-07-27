@@ -3,5 +3,6 @@ export default {
         data: [],
         isLoading: false,
         error: false
-    }
+    },
+    favourites: []
 };

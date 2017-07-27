@@ -20,12 +20,12 @@ class Drama extends React.Component {
     }
 
     render() {
-        const { movies } = this.props;
-        console.log("Hello!!!!", this.props,  movies)
+        const { actions, movies } = this.props;
+        console.log(actions);
         return (
           <div>
             <h1>Drama movies</h1>
-            <List movieprops={movies} />
+            <List movieprops={movies} actions={actions} />
           </div>
         );
     }

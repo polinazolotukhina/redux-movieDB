@@ -1,7 +1,8 @@
 import {
     MOVIES_REQUEST,
     MOVIES_SUCCESS,
-    MOVIES_FAILURE
+    MOVIES_FAILURE,
+    MOVIES_FAVOURITE_ADD
 } from '../constants/actionTypes';
 import initialState from './initialState';
 
@@ -32,6 +33,7 @@ export default function moviesReducer(state = initialState.movies, action) {
               isLoading: false,
               error: action.data,
             }
+
 
         default:
             return state;

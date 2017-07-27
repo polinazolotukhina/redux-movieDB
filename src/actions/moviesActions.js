@@ -27,6 +27,20 @@ function moviesFailure(json) {
     };
 }
 
+function moviesFavourite(id) {
+    return {
+        type: types.MOVIES_FAVOURITE_ADD,
+        favourites: id
+    };
+}
+
+export function moviesAdd(id) {
+  console.log(id, img);
+  return (dispatch) => {
+    dispatch(moviesFavourite(id));
+  };
+}
+
 export function getMovies(params, partUrl) {
     const API_KEY = '79eb5f868743610d9bddd40d274eb15d';
     const parameters = {
