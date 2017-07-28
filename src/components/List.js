@@ -28,7 +28,7 @@ export default class List extends Component {
                           </a>
                           <p>Release date : {item.release_date}</p>
                           <p>👍🏻{item.vote_average}</p>
-                          <button className="pull-left" data-tag={item.id} onClick={(e) => {actions.moviesAdd(e.target.attributes.getNamedItem('data-tag').value)}}>Save to Favourites </button>
+                          <button className="pull-left" onClick={() => {actions.moviesAdd(item)}}>Save to Favourites </button>
                       </div>
                   </div>
                 </div>

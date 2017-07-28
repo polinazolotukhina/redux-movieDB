@@ -27,17 +27,31 @@ function moviesFailure(json) {
     };
 }
 
-function moviesFavourite(id) {
+function moviesFavourite(movie) {
     return {
         type: types.MOVIES_FAVOURITE_ADD,
-        favourites: id
+        favourites: movie
     };
 }
 
-export function moviesAdd(id) {
-  console.log(id, img);
+export function moviesAdd(movie) {
+  console.log(movie);
   return (dispatch) => {
-    dispatch(moviesFavourite(id));
+    dispatch(moviesFavourite(movie));
+  };
+}
+
+function moviesFavouriteRemove(movie) {
+    return {
+        type: types.MOVIES_FAVOURITE_REMOVE,
+        favourites: movie
+    };
+}
+
+export function moviesRemove(movie) {
+  console.log(movie);
+  return (dispatch) => {
+    dispatch(moviesFavouriteRemove(movie));
   };
 }
 
