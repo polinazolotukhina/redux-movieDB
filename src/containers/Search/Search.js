@@ -24,14 +24,14 @@ class Search extends React.Component {
     }
 
     render() {
-        const { movies } = this.props;
+        const { movies, actions } = this.props;
         return (
           <div className="search">
             <h1 className="text-center">Search</h1>
             <div className="text-center">
             <input className="text-center" placeholder="Search for movies..." onChange={this.search}/>
             </div>
-            <List movieprops={movies} />
+            <List movieprops={movies} actions={actions} />
           </div>
         );
     }

@@ -47,13 +47,13 @@ class Cinema extends React.Component {
 
 
     render() {
-        const { movies } = this.props;
+        const { movies, actions } = this.props;
         console.log("total",   movies.data.total_pages)
         const totalPages = movies.data.total_pages;
         return (
           <div>
             <h1>In Cinema Now</h1>
-            <List movieprops={movies} />
+            <List movieprops={movies} actions={actions} />
             <div className="text-center">
               {
                 this.state.page >0 &&

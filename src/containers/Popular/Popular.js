@@ -46,13 +46,13 @@ class Movies extends React.Component {
       }
 
     render() {
-        const { movies } = this.props;
+        const { movies, actions } = this.props;
         const totalPages = movies.data.total_pages;
         console.log("movies", movies)
         return (
           <div>
             <h1>Popular</h1>
-            <List movieprops={movies} />
+            <List movieprops={movies} actions={actions} />
             <div className="text-center">
             {
               this.state.page>0 &&

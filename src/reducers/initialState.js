@@ -4,5 +4,11 @@ export default {
         isLoading: false,
         error: false
     },
-    favourites: []
+    favourites: {
+      favourites: []
+    },
+    // info:{
+    //   hidden: true
+    // }
+
 };

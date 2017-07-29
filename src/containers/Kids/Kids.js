@@ -41,13 +41,12 @@ class Kids extends React.Component {
     }
 
     render() {
-        const { movies } = this.props;
-        console.log( "LALALA", movies)
+        const { movies, actions, info } = this.props;
           const totalPages = movies.data.total_pages;
         return (
           <div>
             <h1>Kids movies</h1>
-            <List movieprops={movies} />
+            <List movieprops={movies} actions={actions} infoprops={info} />
             <div className="text-center">
             {
               this.state.page>0 &&
@@ -65,15 +64,17 @@ class Kids extends React.Component {
 Kids.propTypes = {
     actions: PropTypes.object.isRequired,
     movies: PropTypes.object.isRequired,
+    info:  PropTypes.object.isRequired
 };
 
 
 function mapStateToProps(state) {
-    const { movies, isLoading, error  } = state;
+    const { movies, isLoading, error, info  } = state;
     return {
         movies,
         isLoading,
-        error
+        error,
+        info
     };
 }
 
@@ -82,6 +83,7 @@ function mapDispatchToProps(dispatch) {
         actions: bindActionCreators(actions, dispatch)
     };
 }
+
 
 export default connect(
     mapStateToProps,

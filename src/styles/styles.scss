@@ -2,6 +2,12 @@
 img{
   width: 100%;
 }
+.hidden {
+  display: none;
+}
+.open {
+  display: inline;
+}
 .moveImg{
     max-height:196px;
 }
@@ -27,7 +33,7 @@ body{
   color:black;
 }
 .movie{
-  height: 310px;
+  height: 345px;
 }
 
 .info{

@@ -24,7 +24,7 @@ export default function moviesReducer(state = initialState.movies, action) {
             return {
               isLoading: false,
               error: null,
-              data: action.data
+              data: action.data,
              }
 
         case MOVIES_FAILURE:

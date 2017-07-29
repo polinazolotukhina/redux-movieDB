@@ -10,13 +10,12 @@ class Favourites extends React.Component {
         super(props);
     }
     render() {
-      const { favourites } = this.props;
-      console.log("favourites lalal", favourites)
+      const { actions, favourites } = this.props;
         return (
           <div>
             <h1 className="text-center">Favourite movies</h1>
             {
-              favourites && favourites.map((movie) => {
+              favourites.favourites && favourites.favourites.map((movie) => {
                 return (
                     <div className=" col-md-4 sm-12" key={movie.id}>
                           {
@@ -33,8 +32,7 @@ class Favourites extends React.Component {
                             </a>
                             <p>Release date : {movie.release_date}</p>
                             <p>👍🏻{movie.vote_average}</p>
-                            <button className="pull-left" onClick={() => {actions.moviesRemove(movie)}}>Remove</button>
-
+                            <button className="pull-left" onClick={(e) => {actions.moviesRemove(movie)}}>Remove</button>
                     </div>
                 );
               })
@@ -47,7 +45,7 @@ class Favourites extends React.Component {
 Favourites.propTypes = {
     actions: PropTypes.object.isRequired,
     movies: PropTypes.object.isRequired,
-    favourites: PropTypes.array.isRequired
+    favourites: PropTypes.object.isRequired
 };
 
 

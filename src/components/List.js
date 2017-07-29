@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import * as actions from '../actions/moviesActions';
+import FavouritesButton from './FavouritesButton';
 
 export default class List extends Component {
 
-
   render() {
-    const { actions, movieprops } = this.props;
+    const {  movieprops, infoprops } = this.props;
     return (
       <div className>
         <div className="row">
@@ -22,14 +21,17 @@ export default class List extends Component {
                             <img className="moveImg" src="https://www.omao.noaa.gov/sites/all/themes/noaa_omao/images/video-placeholder-640.jpg" />
                           )
                         }
+                    <div >
                       <div className="info">
                           <a href={"https://www.google.co.uk/search?q=" + item.title }>
                               <h4 className="movieName">{item.title }</h4>
                           </a>
                           <p>Release date : {item.release_date}</p>
                           <p>👍🏻{item.vote_average}</p>
-                          <button className="pull-left" onClick={() => {actions.moviesAdd(item)}}>Save to Favourites </button>
+
+                          <FavouritesButton movie={item} />
                       </div>
+                    </div>
                   </div>
                 </div>
               )
