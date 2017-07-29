@@ -32,7 +32,7 @@ class Favourites extends React.Component {
                             </a>
                             <p>Release date : {movie.release_date}</p>
                             <p>👍🏻{movie.vote_average}</p>
-                            <button className="pull-left" onClick={(e) => {actions.moviesRemove(movie)}}>Remove</button>
+                            <button className="pull-left" onClick= {() => { actions.addRemoveFavourites(movie)}}>Remove</button>
                     </div>
                 );
               })

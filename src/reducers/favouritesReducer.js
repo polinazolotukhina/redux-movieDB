@@ -2,17 +2,22 @@ import {
     MOVIES_FAVOURITE,
 } from '../constants/actionTypes';
 import initialState from './initialState';
+// || favourites.id.includes(movieToCheckIfExistingOrNot.id)
+
 
 function favouriteMovie(favourites, movieToCheckIfExistingOrNot){
-  console.log("I am here", favourites)
-    const movieId = movieToCheckIfExistingOrNot.id;
-    const results = [];
-    if(favourites.id.includes(movieToCheckIfExistingOrNot.id)) {
+
+    var existing = favourites.some(function (el) {
+      return el.id === movieToCheckIfExistingOrNot.id;
+    });
+    console.log('existing', existing);
+
+    if (!existing) {
+       favourites = [...favourites, movieToCheckIfExistingOrNot];
+    } else{
       favourites = favourites.filter(function(a){
-        return a.id != movieId;
+        return a.id != movieToCheckIfExistingOrNot.id;
       })
-    } else {
-      favourites = [...favourites,movieToCheckIfExistingOrNot];
     }
 
     return favourites;
