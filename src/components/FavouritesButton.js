@@ -12,7 +12,7 @@ class FavouritesButton extends React.Component {
   render() {
         const { movie, favourites, actions  } = this.props;
         //const label = favourites.favourites.every(function(item, index, array){item.id != movie.id;}) ? 'Add' : 'Remove'
-        const label = (favourites.favourites.filter(e => e.id == movie.id).length > 0) ? 'Remove' : 'Add';
+        const label = (favourites.favourites.filter(e => e.id == movie.id).length > 0) ? 'Remove from Favourites' : 'Add to Favourites';
         return (
           <div>
             <button onClick= {() => { actions.addRemoveFavourites(movie)}}>{label}</button>

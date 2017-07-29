@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import * as actions from '../../actions/moviesActions';
+import { Link, IndexLink } from 'react-router';
 
 
 class Favourites extends React.Component {
@@ -12,8 +13,16 @@ class Favourites extends React.Component {
     render() {
       const { actions, favourites } = this.props;
         return (
-          <div>
+          <div className="fav">
             <h1 className="text-center">Favourite movies</h1>
+              {
+                (favourites.favourites.length===0) ? (
+                  <div className="text-center " >
+                    <h4>You have no favourite movies saved yet!</h4>
+                    <Link to="/search">Search for movies to add</Link>
+                  </div>
+                ):('')
+              }
             {
               favourites.favourites && favourites.favourites.map((movie) => {
                 return (
@@ -32,7 +41,7 @@ class Favourites extends React.Component {
                             </a>
                             <p>Release date : {movie.release_date}</p>
                             <p>👍🏻{movie.vote_average}</p>
-                            <button className="pull-left" onClick= {() => { actions.addRemoveFavourites(movie)}}>Remove</button>
+                            <button className="pull-left" onClick= {() => { actions.addRemoveFavourites(movie)}}>Remove from Favourites</button>
                     </div>
                 );
               })
