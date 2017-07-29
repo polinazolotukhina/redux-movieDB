@@ -32,11 +32,6 @@ class HomePage extends React.Component {
         return (
           <div className="row">
           <div className="col-md-offset-2 col-md-8">
-
-
-
-
-
             <h1 className="text-center">Why not to watch '{arr.title}'?</h1>
             {
               (movies.isLoading)?(
@@ -58,6 +53,7 @@ class HomePage extends React.Component {
             <p  className="movieName text-center">{arr.overview}</p>
             <div className="text-center">
               <button className="btn btn-default" onClick={this.showNewMovie}>Suggest me something else</button>
+
             </div>
 
             </div>
