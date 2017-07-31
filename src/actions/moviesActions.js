@@ -27,13 +27,7 @@ function moviesFailure(json) {
     };
 }
 
-export function toggleInfo(info) {
-  return {
-    type: types.TOGGLE_INFO,
-  };
-}
-
-
+// ------------------FAVOURITE------------------
 function moviesFavourite(movieToCheckIfExistingOrNot) {
     return {
         type: types.MOVIES_FAVOURITE,
@@ -46,6 +40,29 @@ export function addRemoveFavourites(movie) {
     dispatch(moviesFavourite(movie));
   };
 }
+
+// ------------------ HOVER------------------
+function movieHover(movieThatWasHover) {
+    return {
+        type: types.MOVIE_ACTIVE,
+        movieOnHover: movieThatWasHover
+    };
+}
+
+ export function showInfoOnHover(movie) {
+   return (dispatch) => {
+     dispatch(movieHover(movie));
+   };
+}
+
+
+function moviesFavourite(movieToCheckIfExistingOrNot) {
+    return {
+        type: types.MOVIES_FAVOURITE,
+        favourites: movieToCheckIfExistingOrNot
+    };
+}
+
 
 export function getMovies(params, partUrl) {
     const API_KEY = '79eb5f868743610d9bddd40d274eb15d';

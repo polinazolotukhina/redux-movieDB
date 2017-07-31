@@ -2,7 +2,6 @@ import {
     MOVIES_REQUEST,
     MOVIES_SUCCESS,
     MOVIES_FAILURE,
-    MOVIES_FAVOURITE_ADD
 } from '../constants/actionTypes';
 import initialState from './initialState';
 

@@ -1,16 +1,15 @@
 import {
-    MOVIES_FAVOURITE,
+    MOVIES_FAVOURITE
 } from '../constants/actionTypes';
 import initialState from './initialState';
-// || favourites.id.includes(movieToCheckIfExistingOrNot.id)
+
 
 
 function favouriteMovie(favourites, movieToCheckIfExistingOrNot){
 
-    var existing = favourites.some(function (el) {
+    const existing = favourites.some(function (el) {
       return el.id === movieToCheckIfExistingOrNot.id;
     });
-    console.log('existing', existing);
 
     if (!existing) {
        favourites = [...favourites, movieToCheckIfExistingOrNot];

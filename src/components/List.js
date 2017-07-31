@@ -4,10 +4,21 @@ import FavouritesButton from './FavouritesButton';
 export default class List extends Component {
 
   render() {
-    const {  movieprops, infoprops } = this.props;
+    const {  movieprops, hoverprops } = this.props;
+    console.log("hoverprops", hoverprops.movieOnHover )
     return (
       <div className>
         <div className="row">
+
+          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.title}</p>
+          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.overview}</p>
+          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.release_date}</p>
+          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.original_language}</p>
+          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.popularity}</p>
+          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.release_date}</p>
+
+
+
             {
               movieprops.data.results && movieprops.data.results.map((item ) =>
                 <div className=" col-md-4 sm-12" key={item.id}>
@@ -28,8 +39,9 @@ export default class List extends Component {
                           </a>
                           <p>Release date : {item.release_date}</p>
                           <p>👍🏻{item.vote_average}</p>
+                            <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.overview}</p>
 
-                          <FavouritesButton movie={item} />
+                          <FavouritesButton movie={item}   />
                       </div>
                     </div>
                   </div>

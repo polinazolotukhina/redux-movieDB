@@ -53,7 +53,6 @@ class HomePage extends React.Component {
             <p  className="movieName text-center">{arr.overview}</p>
             <div className="text-center">
               <button className="btn btn-default" onClick={this.showNewMovie}>Suggest me something else</button>
-
             </div>
 
             </div>

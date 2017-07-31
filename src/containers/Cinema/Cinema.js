@@ -47,13 +47,12 @@ class Cinema extends React.Component {
 
 
     render() {
-        const { movies, actions } = this.props;
-        console.log("total",   movies.data.total_pages)
+        const { movies, actions, movieOnHover } = this.props;
         const totalPages = movies.data.total_pages;
         return (
           <div>
             <h1>In Cinema Now</h1>
-            <List movieprops={movies} actions={actions} />
+            <List movieprops={movies} actions={actions} hoverprops = {movieOnHover } />
             <div className="text-center">
               {
                 this.state.page >0 &&
@@ -72,15 +71,17 @@ class Cinema extends React.Component {
 Cinema.propTypes = {
     actions: PropTypes.object.isRequired,
     movies: PropTypes.object.isRequired,
+    movieOnHover: PropTypes.object.isRequired,
 };
 
 
 function mapStateToProps(state) {
-    const { movies, isLoading, error  } = state;
+    const { movies, isLoading, error, movieOnHover } = state;
     return {
         movies,
         isLoading,
-        error
+        error,
+        movieOnHover
     };
 }
 

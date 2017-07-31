@@ -41,12 +41,12 @@ class Kids extends React.Component {
     }
 
     render() {
-        const { movies, actions, info } = this.props;
-          const totalPages = movies.data.total_pages;
+        const { movies, actions } = this.props;
+        const totalPages = movies.data.total_pages;
         return (
           <div>
             <h1>Kids movies</h1>
-            <List movieprops={movies} actions={actions} infoprops={info} />
+            <List movieprops={movies} actions={actions}  />
             <div className="text-center">
             {
               this.state.page>0 &&
@@ -64,17 +64,15 @@ class Kids extends React.Component {
 Kids.propTypes = {
     actions: PropTypes.object.isRequired,
     movies: PropTypes.object.isRequired,
-    info:  PropTypes.object.isRequired
 };
 
 
 function mapStateToProps(state) {
-    const { movies, isLoading, error, info  } = state;
+    const { movies, isLoading, error } = state;
     return {
         movies,
         isLoading,
-        error,
-        info
+        error
     };
 }
 
