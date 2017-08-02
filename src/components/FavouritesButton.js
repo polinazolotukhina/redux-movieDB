@@ -20,10 +20,10 @@ class FavouritesButton extends React.Component {
   }
 
   open() {
+    this.props.actions.showInfoOnHover(this.props.movie);
     this.setState({ showModal: true });
-  }
 
-
+}
 
 
   render() {
@@ -84,8 +84,7 @@ class FavouritesButton extends React.Component {
 
             <button onClick= {() => { actions.addRemoveFavourites(movie)}}>{labelFav}</button>
 
-            <button onClick= {() => { actions.showInfoOnHover(movie)}}> Show Info click here first </button>
-            <button onClick={this.open}> Show Info clisk here after </button>
+        < button onClick={this.open}> Show Info < /button>
 
           </div>
         )
