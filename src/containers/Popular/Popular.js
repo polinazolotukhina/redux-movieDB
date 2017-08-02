@@ -33,11 +33,6 @@ class Movies extends React.Component {
   }
 
       showMovies(){
-        const dateObj = new Date();
-        const  month = dateObj.getUTCMonth() + 1; //months from 1-12
-        const  day = dateObj.getUTCDate();
-        const  year = dateObj.getUTCFullYear();
-        const newdate = year + "-" + month + "-" + day;
         const params = {
           sort_by: 'popularity.descs',
           page: this.state.page +1

@@ -5,22 +5,10 @@ export default class List extends Component {
 
   render() {
     const {  movieprops, hoverprops } = this.props;
-    const data = hoverprops.movieOnHover;
+
     return (
       <div className>
         <div className="row">
-          {
-            data &&
-            <div>
-              <p>{data.title}</p>
-              <p>{data.overview}</p>
-              <p>{data.release_date}</p>
-              <p>{data.original_language}</p>
-              <p>{data.popularity}</p>
-              <p>{data.release_date}</p>
-            </div>
-          }
-
 
             {
               movieprops.data.results && movieprops.data.results.map((item ) =>
@@ -40,9 +28,8 @@ export default class List extends Component {
                           <a href={"https://www.google.co.uk/search?q=" + item.title }>
                               <h4 className="movieName">{item.title }</h4>
                           </a>
-                          <p>Release date : {item.release_date}</p>
                           <p>👍🏻{item.vote_average}</p>
-                          <FavouritesButton movie={item}   />
+                          <FavouritesButton movie={item} hoverprops={hoverprops}   />
                       </div>
                     </div>
                   </div>
