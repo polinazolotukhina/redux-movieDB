@@ -5,18 +5,21 @@ export default class List extends Component {
 
   render() {
     const {  movieprops, hoverprops } = this.props;
-    console.log("hoverprops", hoverprops.movieOnHover )
+    const data = hoverprops.movieOnHover;
     return (
       <div className>
         <div className="row">
-
-          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.title}</p>
-          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.overview}</p>
-          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.release_date}</p>
-          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.original_language}</p>
-          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.popularity}</p>
-          <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.release_date}</p>
-
+          {
+            data &&
+            <div>
+              <p>{data.title}</p>
+              <p>{data.overview}</p>
+              <p>{data.release_date}</p>
+              <p>{data.original_language}</p>
+              <p>{data.popularity}</p>
+              <p>{data.release_date}</p>
+            </div>
+          }
 
 
             {

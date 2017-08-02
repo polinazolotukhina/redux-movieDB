@@ -33,6 +33,7 @@
     "axios": "0.16.2",
     "object-assign": "4.1.0",
     "react": "15.5.4",
+    "react-bootstrap": "0.31.2",
     "react-dom": "15.5.4",
     "react-fontawesome": "1.6.1",
     "react-redux": "5.0.5",
