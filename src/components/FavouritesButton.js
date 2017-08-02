@@ -72,7 +72,21 @@ class FavouritesButton extends React.Component {
            <hr />
 
 
-           <img src={ data&&"http://image.tmdb.org/t/p/w342" + data.backdrop_path} />
+
+
+           {
+             data&&data.backdrop_path ? (
+               <img src={ data&&"http://image.tmdb.org/t/p/w342" + data.backdrop_path} />
+             ) : (<div></div>)
+           }
+
+
+
+
+
+
+
+
            <Button onClick= {() => { actions.addRemoveFavourites(movie)}}>{labelFav}</Button>
 
          </Modal.Body>

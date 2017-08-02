@@ -28,7 +28,6 @@ export default class List extends Component {
                           <a href={"https://www.google.co.uk/search?q=" + item.title }>
                               <h4 className="movieName">{item.title }</h4>
                           </a>
-                          <p>👍🏻{item.vote_average}</p>
                           <FavouritesButton movie={item} hoverprops={hoverprops}   />
                       </div>
                     </div>
