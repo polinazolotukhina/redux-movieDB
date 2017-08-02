@@ -20,12 +20,12 @@ class Drama extends React.Component {
     }
 
     render() {
-        const { actions, movies } = this.props;
+        const { actions, movies, movieOnHover } = this.props;
         console.log(actions);
         return (
           <div>
             <h1>Drama movies</h1>
-            <List movieprops={movies} actions={actions} />
+            <List movieprops={movies} actions={actions}  hoverprops = {movieOnHover} />
           </div>
         );
     }
@@ -34,15 +34,17 @@ class Drama extends React.Component {
 Drama.propTypes = {
     actions: PropTypes.object.isRequired,
     movies: PropTypes.object.isRequired,
+    movieOnHover: PropTypes.object.isRequired,
 };
 
 
 function mapStateToProps(state) {
-    const { movies, isLoading, error  } = state;
+    const { movies, isLoading, error, movieOnHover   } = state;
     return {
         movies,
         isLoading,
-        error
+        error,
+        movieOnHover
     };
 }
 

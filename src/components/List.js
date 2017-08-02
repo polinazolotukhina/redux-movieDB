@@ -39,8 +39,6 @@ export default class List extends Component {
                           </a>
                           <p>Release date : {item.release_date}</p>
                           <p>👍🏻{item.vote_average}</p>
-                            <p>{hoverprops.movieOnHover && hoverprops.movieOnHover.overview}</p>
-
                           <FavouritesButton movie={item}   />
                       </div>
                     </div>

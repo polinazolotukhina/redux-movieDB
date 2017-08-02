@@ -24,14 +24,14 @@ class Search extends React.Component {
     }
 
     render() {
-        const { movies, actions } = this.props;
+        const { movies, actions,  movieOnHover  } = this.props;
         return (
           <div className="search">
             <h1 className="text-center">Search</h1>
             <div className="text-center">
             <input className="text-center" placeholder="Search for movies..." onChange={this.search}/>
             </div>
-            <List movieprops={movies} actions={actions} />
+            <List movieprops={movies} actions={actions}  hoverprops = {movieOnHover }/>
           </div>
         );
     }
@@ -40,15 +40,17 @@ class Search extends React.Component {
 Search.propTypes = {
     actions: PropTypes.object.isRequired,
     movies: PropTypes.object.isRequired,
+    movieOnHover: PropTypes.object.isRequired
 };
 
 
 function mapStateToProps(state) {
-    const { movies, isLoading, error  } = state;
+    const { movies, isLoading, error,  movieOnHover  } = state;
     return {
         movies,
         isLoading,
-        error
+        error,
+        movieOnHover
     };
 }
 
